@@ -1,9 +1,10 @@
 # Personal Website v2
 
-Migrated from [Personal Website v1](https://github.com/melaniebrgr/personal-website). Feature React, Vite, React Router. Some old code was ported directly for efficiency, e.g. jQuery is still a dependency for the nav behaviour.
+Migrated from [Personal Website v1](https://github.com/melaniebrgr/personal-website). Built with React, Vite, and React Router. Some tradeoffs made porting the v1 codebase for speed, e.g. jQuery is still a dependency to achieve the nav behaviour.
 
 ## To do
 
+- [ ] QA personal website v1 and v2
 - [ ] Fix sass style depraction warnings OR
 - [ ] convert to modern vanilla CSS, using variables
 - [ ] remove jQuery
