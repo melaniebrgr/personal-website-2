@@ -30,9 +30,9 @@
 		color: $black;
 	}	
 	a:after {
-		// triangle icon   
+	// triangle icon   
     content: "";
-    background: url("../img/triangle-icon.svg") no-repeat;
+    background: url("/triangle-icon.svg") no-repeat;
     display: inline-block;
     height: 0.9rem;
     position: absolute;

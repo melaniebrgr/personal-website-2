@@ -65,11 +65,11 @@ export default function Layout() {
             <li><a href="http://codepen.io/melaniebrgr/" target="_blank">codepen</a></li>
             <li><a href="https://medium.com/@melaniebrgr" target="_blank">medium</a></li>
             <li><a href="https://www.behance.net/melanieburger" target="_blank">behance</a></li>
-            <li><a href="img/CV.pdf" download>CV</a></li>
+            <li><a href="/CV.pdf" download>CV</a></li>
           </ul>
-          <div className="headshot">
-              <img src="img/headshot-1.png" alt="Illustration of me" />
-          </div>
+            <div className="headshot">
+              <img src="/headshot-1.png" alt="Illustration of me" />
+           </div>
           <ul className="copyright">
             <li>&copy; 2025 Melanie Burger</li>
           </ul>
