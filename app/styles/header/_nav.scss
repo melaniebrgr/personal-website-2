@@ -1,0 +1,81 @@
+.nav {
+	font-family: $sans-serif-1;
+	font-size: $sans-md;
+	font-weight: 100;
+	line-height: 1.5rem;
+	text-align: right;
+	li {
+		list-style: none;
+	}
+	a {
+		background-color: $light-1;	
+		color: $dark-1;
+		display: block;
+		padding: $a-padding-vert $a-padding-horz;
+		position: relative;
+		text-decoration: none;
+		transition: all $short-trns $easing;
+		&:hover {
+			background-color: $mid-2;			
+		}
+	}
+}
+
+.nav_sub {
+	// styling for menu items containing dropdown menus
+	// might need to us JS for animations instead of CSS due to wierd behaviour
+	&.active a {
+		// active state style
+		background-color: $mid-2;
+		color: $black;
+	}	
+	a:after {
+		// triangle icon   
+    content: "";
+    background: url("../img/triangle-icon.svg") no-repeat;
+    display: inline-block;
+    height: 0.9rem;
+    position: absolute;
+    right: $icon-dist;
+    top: 42%;
+    transition: filter $short-trns $easing;
+    width: 0.9rem;
+	}
+	& + li {
+		// drop down menu
+		max-height: 0;
+		opacity: 0;
+		transition: all $long-trns $easing;
+		li {
+			border-bottom: $nav-border;
+			border-left: $nav-border;
+		}
+		&.open {
+			max-height: 500px;
+			opacity: 1;
+		}
+		a {
+			background-color: $light-2;			
+		}
+	}
+}
+
+.nav_link.active a {
+	color: $accent-2;
+}
+
+
+@media screen and (max-width: $md-ish) {
+	.nav {
+		text-align: left;
+		a {
+			padding-left: $a-padding-horz;
+		}
+		li.open {
+			border-right: 1px solid $mid-2;
+		}
+	}
+	.nav_sub a:after {
+		left: $icon-dist;
+	}
+}

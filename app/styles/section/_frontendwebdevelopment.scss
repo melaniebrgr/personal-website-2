@@ -1,0 +1,36 @@
+.fewd {
+	pre {
+		background-color: $dark-1;
+    overflow-x: scroll;
+    overflow-y: auto;
+    & + pre {
+    	margin-top: $a-padding-vert;
+    }
+    code {
+    	color: $white;
+	    display: inline-block;
+    	font-family: $mono-1;
+    	line-height: 1.2rem;
+    }
+    figcaption {
+	    float: left;
+	    margin-top: -14px;
+	    width: 100%;
+    }
+	}
+	.challenge-number {
+    background-color: $accent-1;
+		color: $light-1;
+    display: inline-block;
+		float: left;
+    font-family: $serif-1;
+    font-size: $serif-xlg;
+    height: 65px; //Magic number
+    line-height: 50px;
+    margin-right: 16px;
+    margin-top: 3px;
+    overflow: hidden;
+    text-align: center;
+    width: 65px; 
+	}	
+}

@@ -1,0 +1,96 @@
+// Layout module variables
+$feature-height: 19rem;
+@mixin block-sizing {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 0 2rem;
+}
+
+// Layout module styles
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.container {
+	@include block-sizing;
+	display: flex;
+	justify-content: center;
+	min-height: 100%;
+	.content {
+		width: 66%;
+	}
+}
+
+.logo {
+	height: $feature-height;
+}
+
+.feature {
+	position: relative;
+	height: $feature-height;
+	width: 100%;
+	.headline,
+	.quote {
+		// display: inline-block;
+    // left: 50%;
+    // width: 100%;
+    position: relative;
+    top: 50%;
+    // transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%);
+	}
+}
+
+.footer {
+	@include block-sizing;
+	position: relative;
+}
+
+// Layout module responsize media queries
+@media screen and (max-width: $md-ish) {
+	.container {
+		flex-direction: column;
+		justify-content: flex-start;
+		padding: 0;
+		header {
+			text-align: left;
+			.nav {
+				margin-top: 32px;
+			}
+		}
+		.content {
+			width: 100%;
+		}
+	}	
+	.logo {
+		height: initial;
+	}
+	.feature,
+	.feature canvas {
+		height: 23rem;
+	}
+	.footer {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: $sm-ish) { 
+	.feature,
+	.feature canvas {
+		height: 23rem;
+	}
+	footer {
+		display: none;
+	}
+}

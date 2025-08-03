@@ -1,0 +1,86 @@
+@import 'frontendwebdevelopment';
+@import 'writingandspeaking';
+
+article {
+	a {
+    @include transition(color);
+    color: $dark-1;
+    &:hover {
+      color: $accent-1;
+    }
+  }
+  em {
+    font-family: $sans-serif-1;
+    color: $accent-1;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }  
+  h3 {
+		font-size: $serif-md;
+		margin: $a-padding-vert*2 $a-padding-horz $a-padding-vert $a-padding-horz;
+	}
+  h4 {
+    font-size: $serif-sm;
+    margin-bottom: $a-padding-vert/2;
+  }
+  img {
+    width: 100%;
+  }  
+	p {
+		font-size: $sans-sm;
+		margin: $a-padding-vert $a-padding-horz;
+    line-height: 1.6rem;
+	}
+	ol {
+		counter-reset: list;
+		margin: $a-padding-vert 63px;
+    li {
+		font-size: $sans-sm;
+    list-style: none;
+		line-height: 1.58rem;
+		margin: 0.58rem 0;
+    position: relative;
+    }
+    li::before {
+      counter-increment: list;
+      content: counter(list);
+      color: lighten($dark-1, 4%);
+      font-family: $serif-1;
+      font-weight: 700;
+      left: -1.3rem;
+      position: absolute;
+      top: -1px;
+    }
+    li.q::before {
+      content: 'Q';
+      top: 0px;
+    }
+    li.a::before {
+      content: 'A';
+      top: 0px;
+    }    
+	}
+  figcaption {
+    @include subtle-bevel-border;
+    background-color: $mid-2;
+    color: $dark-1;
+    font-family: $serif-1;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    margin-top: -4px;
+    padding: $a-padding-vert $a-padding-horz;
+  }
+  .tech {
+    @include clearfix;
+    margin: $a-padding-vert $a-padding-horz;
+    li {
+      font-family: $sans-serif-1;
+      background-color: $mid-2;
+      border-radius: 20px;
+      color: $dark-1;
+      display: inline-block;
+      margin-bottom: $a-padding-vert/2;
+      padding: $a-padding-vert/2 $a-padding-horz/2;
+    }
+  }     
+}

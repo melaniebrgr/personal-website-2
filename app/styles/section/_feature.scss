@@ -1,0 +1,73 @@
+@mixin feature-lg-txt {
+	color: $light-1;
+	font-size: $serif-lg;
+	margin-bottom: 0.4rem;
+}
+
+@mixin feature-sm-txt {
+	color: $mid-2;
+	font-size: $sans-sm;
+  line-height: 1.58rem;
+}
+
+.feature {
+	@include subtle-bevel-border($dark-1);
+	background-color: $dark-1;
+	// background: linear-gradient(to bottom, $mid-1 0%,$mid-2 100%);
+	.headline {
+		overflow: auto;
+		padding: $a-padding-vert*2 $a-padding-horz;		
+		h1 {
+			color: $light-1;
+			font-size: $serif-lg;
+			margin-bottom: 0.4rem;
+		}
+		h2 {
+			color: $light-1;
+			font-size: $sans-md;
+			margin-bottom: 0.6rem;
+		}
+		p {
+			color: $mid-2;
+			font-size: $serif-xsm;
+			line-height: 1.58rem;
+		}
+	}
+	.quote {
+		h2 {
+			@include feature-lg-txt;
+			font-size: $serif-md;
+		}
+		footer {
+			@include feature-sm-txt;
+		}
+	}
+	.cta {
+		@include subtle-bevel-border($accent-1);
+		background-color: $accent-1;	
+		background: linear-gradient(to bottom, $accent-1 0%,lighten($accent-2, 2%) 100%);
+		box-shadow: 0 4px 25px rgba(darken($accent-1, 50%), 0.4);
+		color: $light-1;
+		display: inline-block;
+		float: left;
+		font-size: $sans-sm;
+	  margin-top: 1.4rem;
+	  margin-right: 0.7rem;
+		padding: $a-padding-vert $a-padding-horz;
+		text-decoration: none;
+		transition: all $long-trns $easing;
+
+		&:hover {
+			box-shadow: 0 8px 37px rgba(darken($accent-1, 50%), 0.8);
+			background-color: $accent-2;
+		}
+	}
+}
+
+@media screen and (max-width: $md-ish) { 
+	.feature {
+		.headline h2 {
+			font-size: $serif-md;
+		}		
+	}
+}
