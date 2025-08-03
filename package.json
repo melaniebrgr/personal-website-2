@@ -1,7 +1,7 @@
 {
   "name": "personal-website-2",
   "version": "2.0.0",
-  "description": "Melanie Burger's portfolio website",
+  "description": "Melanie Burger's personal website",
   "private": true,
   "type": "module",
   "author": "Melanie Burger",
@@ -16,23 +16,23 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@react-router/node": "^7.7.1",
-    "@react-router/serve": "^7.7.1",
-    "isbot": "^5.1.27",
-    "jquery": "^3.7.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router": "^7.7.1"
+    "@react-router/node": "7.7.1",
+    "@react-router/serve": "7.7.1",
+    "isbot": "5.1.27",
+    "jquery": "3.7.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-router": "7.7.1"
   },
   "devDependencies": {
-    "@react-router/dev": "^7.7.1",
-    "@types/jquery": "^3.5.32",
-    "@types/node": "^20",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "sass-embedded": "^1.89.2",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.3",
-    "vite-tsconfig-paths": "^5.1.4"
+    "@react-router/dev": "7.7.1",
+    "@types/jquery": "3.5.32",
+    "@types/node": "20",
+    "@types/react": "19.1.2",
+    "@types/react-dom": "19.1.2",
+    "sass-embedded": "1.89.2",
+    "typescript": "5.8.3",
+    "vite": "6.3.3",
+    "vite-tsconfig-paths": "5.1.4"
   }
 }

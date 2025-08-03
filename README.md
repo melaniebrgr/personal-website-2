@@ -1,20 +1,12 @@
-# Portfolio Website v2
+# Personal Website v2
 
-## feat. React Router
+Migrated from [Personal Website v1](https://github.com/melaniebrgr/personal-website). Feature React, Vite, React Router. Some old code was ported directly for efficiency, e.g. jQuery is still a dependency for the nav behaviour.
 
-A modern, production-ready template for building full-stack React applications using React Router.
+## To do
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- [ ] Fix sass style depraction warnings OR
+- [ ] convert to modern vanilla CSS, using variables
+- [ ] remove jQuery
 
 ## Getting Started
 
@@ -46,25 +38,7 @@ npm run build
 
 ## Deployment
 
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+Will be deployed as a static site to AWS.
 
 ### DIY Deployment
 
@@ -79,11 +53,3 @@ Make sure to deploy the output of `npm run build`
 │   ├── client/    # Static assets
 │   └── server/    # Server-side code
 ```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
