@@ -1,12 +1,8 @@
-import { NavLink } from "react-router";
+import { NavLink, Outlet } from "react-router";
 import { useEffect } from "react";
 import $ from "jquery";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout() {
   useEffect(() => {
     // jQuery code - equivalent to $(document).ready()
     $('.nav_sub').off('click').on('click', function(e) {
@@ -40,7 +36,7 @@ export default function Layout({ children }: LayoutProps) {
             <ul>
     					<li className="nav_sub fewd"><a href="#">Web Development</a></li>
               <li>
-                                <ul>
+                <ul>
                    <li className="nav_link"><NavLink to="/gctavatar">GCTAvatar</NavLink></li>
                    <li className="nav_link"><NavLink to="/lab3d">Lab<sub>3</sub>D</NavLink></li>          
                    <li className="nav_link"><NavLink to="/cocktailsquiz">Cocktails Quiz</NavLink></li>
@@ -59,7 +55,7 @@ export default function Layout({ children }: LayoutProps) {
     				</ul>
     			</nav>
     		</header>
-    		<section className="content">{children}</section>
+    		<section className="content"><Outlet /></section>
     	</div>
       <footer className="footer">
           <ul className="social-media">
