@@ -60,12 +60,12 @@ export default function Layout() {
       <footer className="footer">
           <ul className="social-media">
             <li><a href="mailto:melanie.brgr@gmail.com" target="_blank">email</a></li>
-            <li><a href="https://twitter.com/melaniebrgr" target="_blank">twitter</a></li>
             <li><a href="https://github.com/melaniebrgr" target="_blank">github</a></li>
-            <li><a href="http://codepen.io/melaniebrgr/" target="_blank">codepen</a></li>
             <li><a href="https://medium.com/@melaniebrgr" target="_blank">medium</a></li>
+            <li><a href="https://pearreviewer.substack.com" target="_blank">substack</a></li>
+            <li><a href="https://www.linkedin.com/in/melaniebrgr/" target="_blank">linkedin</a></li>
+            <li><a href="http://codepen.io/melaniebrgr/" target="_blank">codepen</a></li>
             <li><a href="https://www.behance.net/melanieburger" target="_blank">behance</a></li>
-            <li><a href="/CV.pdf" download>CV</a></li>
           </ul>
             <div className="headshot">
               <img src="/headshot-1.png" alt="Illustration of me" />
