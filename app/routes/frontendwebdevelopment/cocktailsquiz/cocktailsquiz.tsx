@@ -1,0 +1,119 @@
+export default function CocktailQuiz() {
+  return (
+    <>
+      <div className="feature">
+        <header className="headline">
+          <h1>Cocktail Quiz</h1>
+          <h2>Test your mixing knowledge (or cheat by checking console)</h2>
+          <a href="http://melaniebrgr.github.io/cocktailquiz/" className="cta" target="_blank" rel="noopener noreferrer">Visit site</a>
+        </header>
+      </div>
+      <article className="fewd">
+        <ul className="tech">
+          <li>HTML</li>
+          <li>Sass (BEM)</li>
+          <li>JS</li>
+          <li>jQuery</li>
+        </ul>
+        <p className="date">Aug 29, 2016</p>
+        <h3>Introduction</h3>
+        <p>The goal for this project was to create a quiz app for learning how to mix the "<a href="http://drinks.seriouseats.com/2013/05/25-essential-cocktails-everyone-should-know-cocktail-101-easy-mixed-drink-recipes-classic-cocktail-guide.html" target="_blank" rel="noopener noreferrer">25 essential cocktails</a>". In online courses the immediate feedback that can be provided for quizzes is known to lead to improved learning outcomes over static or print homework. For this reason I also wanted to provide feedback to the user on the ingredients selected, and wrote responses for possible cases, e.g. from "too few ingredients and none are the right ones" to "the right number of ingredients and all the right ones" to "no ingredients selected".</p>
+        <h3>Approach</h3>
+        <p>An additional goal for the project was to follow an object-oriented approach where each cocktail is an object containing relevant business logic, e.g. listing its own ingredients, comparing user selected ingredients to the list of its own ingredients, etc. (Snippet 1).</p>
+        <pre>
+          <code>
+{`function Cocktail( name, ingredients, recipeURL ) {
+  this.name = name;
+  this.ingredients = ingredients;
+  this.url = recipeURL;
+}
+
+Cocktail.prototype.makeIngredList = function makeIngredList( ingredList ) {
+  var ingredList = ingredList || [];
+  this.ingredients.forEach(function(el) {
+    ingredList.push( el.ingredient );
+  });
+  return ingredList;
+};
+
+Cocktail.prototype.getResult = function getResult( userIngred ) {
+  var correctIngred = [],
+    incorrectIngred = [],
+    quizIngred,
+    diff;
+
+  quizIngred = this.makeIngredList()
+
+  userIngred.forEach(function(el) {
+    if ( $.inArray(el, quizIngred) === -1  ) {
+      incorrectIngred.push(el);
+    } else {
+      correctIngred.push(el);
+    }
+  });	
+    
+  diff = userIngred.length - quizIngred.length;
+    
+  return {
+    diff: diff,
+    correctGuesses: correctIngred,
+    incorrectGuesses: incorrectIngred
+  };
+};`}
+          </code>
+          <figcaption>Snippet 1. A cocktail "class"</figcaption>
+        </pre>
+        <p>Also, although it's a fairly simple app, it was still useful to break it into modules, using the <a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript" target="_blank" rel="noopener noreferrer">revealing module pattern</a> (Snippet 2).</p>
+        <pre>
+          <code>
+{`var APP = APP || {};
+
+APP.init = function () {
+
+  var cocktailsInGame = APP.data.cocktails;
+  var selectedCocktail;
+  
+  function publicGetSelectedCocktail() {
+    return selectedCocktail;
+  }
+  
+  function publicPickCocktail() {
+    //set the selectedCocktail private variable
+    //update the mix info
+    selectedCocktail = newCocktail( cocktailsInGame )[0];
+    $('.quiz__mix-info .cocktail-name').text( selectedCocktail.name );
+  }
+  
+  function publicReset() {
+    // clear ingredients in mix info and feedback
+    // deactivate all ingredient buttons
+    $('.quiz__mix-info .cocktail-ingredients').empty();
+    $('.cocktail-feedback').addClass('is-hidden').empty();
+    $('.answers button.is-active').removeClass('is-active');
+  }
+  
+  return {
+    getSelectedCocktail: publicGetSelectedCocktail,
+    pickCocktail: publicPickCocktail,
+    reset: publicReset
+  };
+}();`}
+          </code>
+          <figcaption>Snippet 2. Revealing the "init" module</figcaption>
+        </pre>
+        <h3>Next steps</h3>
+        <p>As an exercise,</p>
+        <ol>
+          <li>think about how I could also turn the <a href="https://www.khanacademy.org/computing/computer-programming/programming-games-visualizations/programming-buttons/a/a-button-object-type" target="_blank" rel="noopener noreferrer">buttons into objects</a>, and whether this would be a useful approach here</li>
+          <li>try refactoring the constructor functions to Kyle Simpson's <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/ch6.md#delegation-theory" target="_blank" rel="noopener noreferrer">OLOO pattern</a>.</li>
+        </ol>
+        <h3>Addendum</h3>  
+        <p>Tone of the immediate feedback messages was inspired by SurveyMonkey's <a href="http://styleguide.mailchimp.com/voice-and-tone/" target="_blank" rel="noopener noreferrer">Voice and Tone style guide</a>. Layout wireframe was made in Sketch (Figure 1). Font is "Avenir Next".</p>
+        <figure>
+          <img src="app/routes/frontendwebdevelopment/cocktailsquiz/fig1.png" alt="" />
+          <figcaption>Figure 1. Cocktail quiz wireframes</figcaption>
+        </figure>   
+      </article>
+    </>
+  );
+}

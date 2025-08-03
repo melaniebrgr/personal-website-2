@@ -1,0 +1,110 @@
+export default function GCTAvatar() {
+  return (
+    <>
+      <div className="feature">
+        <header className="headline">
+          <h1>GCTAvatar</h1>
+          <h2>Create an artistic visualization based on your genetic data</h2>
+          <a href="https://github.com/melaniebrgr/gctavatar" target="_blank" className="cta" rel="noopener noreferrer">See the code</a>
+        </header>
+      </div>
+      <article className="fewd">
+        <ul className="tech">
+          <li>HTML</li>
+          <li>Sass</li>
+          <li>JS</li>
+          <li>SVG</li>
+          <li>OAuth2</li>
+          <li>PHP</li>
+          <li>jQuery</li>
+          <li>GSAP</li>
+        </ul>
+        <p className="date">Aug 21, 2016</p>
+        <h3>Introduction</h3> 
+        <p>Virtual reality can immerse you further into a game, but what if, the game could respond more uniquely to you at the same time? What if your real-life physical traits affected your hit and health points, and how much you could carry before being encumbered? (👋🏻 Skyrim)</p>
+        <p>Could genetic data from the <a href="https://api.23andme.com/docs/" target="_blank" rel="noopener noreferrer">23andMe API</a>, be used to set up the base stats of a virtual avatar? Then, what if biometric data from the <a href="https://dev.fitbit.com/ca" target="_blank" rel="noopener noreferrer">fitbit API</a> could be synced with your avatar so that you could level-up alongside your avatar? Mix in a 3D scan of your body, and you have a virtual doppelgänger ...and potentially a dystopian universe. Nevertheless, this project explored how the 23andMe API could be used to initialize a custom avatar image based on genetic data.</p>
+        <h3>Challenges</h3>
+        <p><span className="challenge-number">1</span>23andMe uses OAuth to allow clients to authorize access to genetic data to a third-party. Accordingly, a LAMP (Linux Apache MySQL PHP) backend was set up make RESTful API requests to 23andMe. To get an authorization code, the client is sent to 23andMe's authorization site with each genetic datum requested (the scope) passed as query parameters.</p>
+        <p>Once the client gives permission, they are redirected to GCTAvatar with an authorization code which is set as a browser cookie with the <a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="noopener noreferrer">js-cookie library</a>. The code is then exchanged for an access token which is used to call the 23andMe API endpoints indicated in the scope. For demo purposes, if the user is not genotyped, a mock user endpoint is used. Client-side, these steps are hidden behind a loading animation. Once the 23andMe user data is obtained, a callback function displays the avatar visualization.</p>
+        <p><span className="challenge-number">2</span>The values of the single nucleotide polymorphisms requested in the scope needed to be transformed into values to generate an image. While single G, C, T, or A base pair mutations predispose someone to certain phenotypes (blue, green or brown eyes, for example), they do not guarantee them. A lot depends on pure chance and a person's ancestry, the latter of which was not something I could account for. I opted for a naive interpretation: given a certain mutation, what was the percent likelihood of a particular phenotype? Then I generated a random number and saw if it fell within that range and set the predicted result to a user model object (Snippet 1).</p>
+        <pre>
+          <code>
+{`usermodel = {
+  sex: "female",
+  fullname: "Lilly Mendel",
+  eyecolor: "blue",
+  freckles: "few",
+  eyesight: "wears glasses",
+  haircolor: "brown",
+  neanderthalness: "normal"
+};`}
+          </code>
+          <figcaption>Snippet 1. User mode object</figcaption>
+        </pre>
+        <p>The user model object was then used an input value to a subsequent animation model function which returned another object with values used to set up the animation (Snippet 2). The animation model function maps user model inputs to animation value outputs with a hash map.</p>
+        <pre>
+          <code>
+{`animationmodel = {
+  sex: "female",
+  eyecolor: {hue: "#916b66", spin: -172},
+  eyedialatormuscle: "#D6B08C",
+  freckles: 0,
+  glasses: false,
+  haircolor: "#916b66",
+  neanderthal: {scale: 1, stroke: 7}
+};`}
+          </code>
+          <figcaption>Snippet 2. Animation model object</figcaption>
+        </pre>
+        <p><span className="challenge-number">3</span>How to turn genetic data into a visualization? One option is to pre-render all possible visual outcomes to sprite sheets and write logic to composite an image from the different sprites (face shape, eyes, glasses and so on). I decided on a more flexible approach of using a SVG image as a base and setting the SVG attributes with javascript. To accomplish this I use the GSAP library to apply and animate SVG fill and stroke properties.</p>
+        <figure>
+          <img src="app/routes/frontendwebdevelopment/gctavatar/fig1.png" alt="" />
+          <figcaption>Figure 1. Base female and male heads created and exported from Illustrator.</figcaption>
+        </figure>  
+        <p>I first created the base female and male SVG images in Illustrator (Figure 1), being careful to avoid effects such as drop shadows that cannot be exported as a SVG filter effects. I then followed the general pattern for SVG animation using GSAP from <a href="https://ihatetomatoes.net/" target="_blank" rel="noopener noreferrer">Petr Tichy's courses</a> and the <a href="http://greensock.com/" target="_blank" rel="noopener noreferrer">Greensock website</a>. Create modules made it easier to edit and organize the animation timelines. My approach was to</p>
+        <ol>
+          <li>Breakdown a complex animation into individual child timelines.</li>
+          <li>Create a parent timeline and add child timelines to it (Snippet 3).</li>
+          <li>To create a child timeline (Snippet 4), first save references to each SVG element to be animated within the function scope. Second, create a timeline instance and add tweens or animation steps to it. Finally, return the timeline.</li>
+        </ol>
+        <pre>
+          <code>
+{`function setMainTl(animodel) {
+  mainTl = new TimelineMax();
+  mainTl
+    .add(animSex(animodel))
+    .add(animEyes(animodel))
+    .add(animGlasses(animodel))
+    .add(animHaircolor(animodel))
+    .add(animFreckles(animodel))
+    .add(animNeanderthal(animodel));
+}`}
+          </code>
+          <figcaption>Snippet 3. Example parent timeline</figcaption>
+        </pre> 
+        <pre>
+          <code>
+{`function animNeanderthal(animodel) {
+  var eyebrows = $('#eyebrow path, #eyebrow-2 path'),
+      nose = $('#nose path');
+
+  var neanderTl = new TimelineMax();
+  neanderTl
+    .to(eyebrows, 0.8, {attr: {'stroke-width': animodel.neanderthal.stroke}})
+    .to(nose, 0.8, {transformOrigin:'right top', scale: animodel.neanderthal.scale});
+  return neanderTl;
+}`}
+          </code>
+          <figcaption>Snippet 4. Example child timeline</figcaption>
+        </pre>
+        <h3>Addendum</h3>
+        <p>Here are the wireframes used to plan the app UI:</p>
+        <figure>
+          <img src="app/routes/frontendwebdevelopment/gctavatar/fig2.png" alt="" />
+          <figcaption>Figure 2. GCTAvatar wireframes</figcaption>
+        </figure>    
+        <p>The colour theme was eventually taken from <a href="http://madebyfieldwork.com/" target="_blank" rel="noopener noreferrer">madebyfieldwork</a>. Layout wireframe made in Sketch (Figure 2). "<a href="https://fonts.google.com/specimen/Cabin" target="_blank" rel="noopener noreferrer">Cabin</a>" and "<a href="https://fonts.google.com/specimen/Cabin+Sketch" target="_blank" rel="noopener noreferrer">Cabin Sketch</a>" fonts from Google Fonts.</p>               
+      </article>
+    </>
+  );
+}

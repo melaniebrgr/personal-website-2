@@ -15,12 +15,12 @@ export default function ApliaRedesign() {
     <h3>Introduction</h3>
     <p>In one impressive example of the impact of design, removing a single field from the Expedia.com check-out form boosted sales by 12 million dollars. If a simple UI decision can do that for e-commerce, what can it do for learning? When designing interfaces for learning, we consider usability and the user experience, but we also need to keep in mind that the goals of the learner are significantly different from a consumer: a learner is seeking to transform herself. The field of Instructional Design (ID) is devoted to crafting educational experiences based on learning science research, and if you’re developing educational content, consulting with an instructional designer would be beneficial. If you don't have access to an ID specialist however, there are still simple things you can do to enhance the learning experience.</p>
     <figure>
-      <img src="views/designandvisualcommmunication/apliaredesign/fig1.png" alt="" />
+      <img src="app/routes/designandvisualcommmunication/apliaredesign/fig1.png" alt="" />
       <figcaption>Figure 1. Aplia Biology interface</figcaption>
     </figure> 	
     <p>Figure 1 shows an image from <a href="http://www.aplia.com/" target="_blank">Aplia</a>, an online learning resource. Figure 2 is my unsolicited redesign based on simple advice from “Don’t Make Me Think”, “Interface design for learning”, and other books.</p>
      <figure>
-      <img src="views/designandvisualcommmunication/apliaredesign/fig2.png" alt="" />
+      <img src="app/routes/designandvisualcommmunication/apliaredesign/fig2.png" alt="" />
       <figcaption>Figure 2. Aplia Biology interface redesign</figcaption>
     </figure> 
     <h3>Make it easy to use</h3>
@@ -44,7 +44,7 @@ export default function ApliaRedesign() {
     <p>If something looks like it’s going to be difficult to use it won’t be used. Attractive interfaces are easier use than less attractive ones even if they are functionally equivalent. This is because aesthetics impact mood and disposition towards tackling a problem, (the “aesthetic-usability effect”). Pleasing and consistent styling can make the learner feel smarter and more in control by helping them immediately ‘get' what they are supposed to do.</p>
     <p>A style guide (Figure 3) can not only define the visual hierarchy, but also establish aesthetic and mood through layout, colour, and typographic treatment. Since we are less receptive to challenges and less able to think creatively when we are anxious or stressed, the style guide elements for the redesign were selected to foster a friendly and calming mood.</p>
     <figure>
-      <img src="views/designandvisualcommmunication/apliaredesign/fig3.png" alt="" />
+      <img src="app/routes/designandvisualcommmunication/apliaredesign/fig3.png" alt="" />
       <figcaption>Figure 3. Style guide for redesign</figcaption>
     </figure> 	
     <p>Open Sans and Tisa Pro, friendly typefaces designed for legibility and comfortable screen reading were chosen. A line length of 65-75 is used, which is known to be a comfortable reading length. Consistent white space is introduced to help break the page layout into chunks. Words relevant to the learning objectives are highlighted to help identify at-a-glance what the key topics are and where they are discussed. Cooler colours are selected to create an overall pallete that is receding and calming:</p>

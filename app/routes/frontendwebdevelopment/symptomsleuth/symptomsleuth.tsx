@@ -1,0 +1,85 @@
+export default function SymptomSleuth() {
+  return (
+    <>
+      <div className="feature">
+        <header className="headline">
+          <h1>Symptom Sleuth</h1>
+          <h2>Map associations between symptoms, diagnoses and treatment plans</h2>
+          <a href="http://dev.symptomsleuth.com/" className="cta" target="_blank" rel="noopener noreferrer">Visit site</a>
+        </header>
+      </div>
+      <article className="fewd">
+        <ul className="tech">
+          <li>HTML</li>
+          <li>Bootstrap</li>
+          <li>Sass</li>
+          <li>JS</li>
+          <li>Angular 1</li>
+          <li>Gulp</li>
+        </ul>
+        <p className="date">Sep 24, 2017</p>
+        <h3>Introduction</h3>
+        <p>WebMD's <a href="http://symptoms.webmd.com/#introView" target="_blank" rel="noopener noreferrer">Symptom Checker</a> is a useful resource for patients who want to learn and get general advice about their symptoms. Surprisingly there currently is no equivalent tool for doctors and medical students that connects symptoms and test results – as they would be determined by a medical professional – to differential diagnoses and treatments. The goal of Symptom Sleuth (SS) is to address that gap: as symptoms and test results are entered, possible differential diagnoses are presented in order of match percentage. The ideal future of SS is use machine learning to train the matching algorithm to more accurately predict diagnoses given a set of symptoms.</p>
+        <p>SS was a collaboration between myself (front-end), Vincent Derelle (back-end), Dr. Bryce Burger (family physician), and Caroline Allen (medical transcriptionist).</p>
+        <h3>Challenges</h3>
+        <p><span className="challenge-number">1</span>With team members working in different provinces the first challenge was communication. I set up a Slack channel, integrated our GitHub (private) repo, and front-end and back-end Trello boards. In addition, Gulp and a Jenkins CI server were set up to automatically build and deploy the website. Every time code was pushed to GitHub or a task was started or completed on Trello the team was notified in Slack to check changes to the app and provide feedback.</p>
+        <p><span className="challenge-number">2</span>The input fields in the symptoms column are created dynamically depending on the "conditions" data. Conditions are fetched (currently from a local JSON file, but eventually from a database), and logic is being development to present the appropriate input fields depending on possible data input types. For instance, for some symptoms a plain text input field is sufficient, but for others the user must first be able to select the lab finding, e.g. "white blood cell count" and then be presented with the appropriate radio options, e.g. "low, normal, high". Directives have been created for these (Snippet 1) but view logic is still underway.</p>
+        <pre>
+          <code>
+{`angular.module('symptom-sleuth').directive('ssDropdownInput', function(ssModel) {
+  "ngInject";
+  return {
+    restrict: 'E',
+    scope: true,
+    templateUrl: 'views/ss-dropdown-input.tmpl.html',
+    controllerAs: 'dropdownctrl',
+    link: function(scope, element, attrs) {
+      var subheading = attrs.ssSubheading;
+      scope.listItems = [];
+      
+      scope.selectItem = function(item) {
+        // TODO: Replaces dropdown with relevant radio inputs
+        console.log(item);
+      };
+      
+      ssModel.get().then(function(data) {
+        // Create list items array for dropdown
+        data.conditions.forEach(function(el) {
+          if (!_.isEmpty(el[subheading])) {
+            for (var key in el[subheading]) {
+              scope.listItems.push(key);
+            }
+          }
+        });
+        // Sort list alphabetically
+        scope.listItems.sort(function(a, b) {
+          var a = a.toUpperCase();
+          var b = b.toUpperCase();
+          return (a < b) ? -1 : (a > b) ? 1 : 0;
+        });
+        // Remove duplicates from list
+        scope.listItems = _.sortedUniq(scope.listItems);
+      });
+    }
+  };
+});`}
+          </code>
+          <figcaption>Snippet 1. Dropdown directive (WIP)</figcaption>
+        </pre>
+        <h3>Next steps</h3>
+        <p>SS was a challenging but rewarding endeavour. The next immediate steps would have been to</p>
+        <ol>
+          <li>implement the initial (naive) algorithm for predicting diagnoses</li>
+          <li>add symptoms predictive symptom typing</li>
+          <li>set up automated framework</li>
+        </ol>
+        <h3>Addendum</h3>
+        <p>Functionality ideas for SS evolve quickly, Figure 1 shows the current UI sketch.</p>
+        <figure>
+          <img src="app/routes/frontendwebdevelopment/symptomsleuth/fig1.jpg" alt="" />
+          <figcaption>Figure 1. Wireframe sketch for Symptom Sleuth (previously MD Mindmap)</figcaption>
+        </figure>  
+      </article>
+    </>
+  );
+}
