@@ -8,6 +8,7 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+
 import "./styles/app.scss";
 
 export function Layout({ children }: { children: React.ReactNode }) {
