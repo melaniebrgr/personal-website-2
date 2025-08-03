@@ -1,12 +1,3 @@
-import type { Route } from "../../+types/root";
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "Melanie 🍔's Website" },
-    { name: "description", content: "Portfolio website of Melanie - creating at the intersection of art, science, and technology" },
-  ];
-}
-
 export default function Home() {
   return (
     <>
