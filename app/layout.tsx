@@ -31,7 +31,7 @@ export default function Layout() {
     <>
     	<div className="container">
     		<header className="header">
-    			<div className="logo"><NavLink to="/"><svg id="path" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300"><defs><linearGradient id="linear-gradient" x1="150.5" y1="0.907" x2="150.5" y2="300.907" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#f16267"/><stop offset="1" stopColor="#ef4765"/></linearGradient></defs><title>logo</title><polygon points="300.5 300 0.5 300 0.5 0 150.5 112.5 300.5 0 300.5 300" fill="url(#linear-gradient)"/></svg></NavLink></div>
+    			<div className="logo"><NavLink to="/"><img src="/logo.svg" alt="logo" /></NavLink></div>
           <nav className="nav">
             <ul>
     					<li className="nav_sub fewd"><a href="#">Web Development</a></li>
@@ -70,7 +70,7 @@ export default function Layout() {
               <img src="/headshot-1.png" alt="Illustration of me" />
            </div>
           <ul className="copyright">
-            <li>&copy; {new Date().getFullYear()} Melanie Burger, melanie.brgr@gmail.com</li>
+            <li>&copy; {new Date().getFullYear()} melanie.brgr@gmail.com</li>
           </ul>
         </footer>
     </>

@@ -40,6 +40,7 @@ body {
 	position: relative;
 	height: $feature-height;
 	width: 100%;
+
 	.headline,
 	.quote {
 		// display: inline-block;
@@ -50,6 +51,17 @@ body {
     // transform: translateY(-50%) translateX(-50%);
     transform: translateY(-50%);
 	}
+}
+
+.headline__logo {
+	height: 0.9em;
+	width: auto;
+	display: inline-block;
+	margin-right: 0.1em;
+}
+
+.headline__logo--rotated {
+	transform: rotate(90deg);
 }
 
 .footer {

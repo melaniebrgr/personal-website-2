@@ -8,6 +8,8 @@ Migrated from [Personal Website v1](https://github.com/melaniebrgr/personal-webs
 - [ ] Fix sass style depraction warnings OR
 - [ ] convert to modern vanilla CSS, using variables
 - [ ] remove jQuery
+- [ ] move all static assets to public folder
+- [ ] remove docker files
 
 ## Getting Started
 

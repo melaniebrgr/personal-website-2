@@ -3,7 +3,7 @@ export default function Home() {
     <>
       <div className="feature">
       <header className="headline">
-        <h1>Melanie 🍔's Website</h1>
+        <h1><img src="/logo.svg" alt="logo" style={{height: '0.9em', width: 'auto', display: 'inline-block', marginRight: '0.1em'}} /><img src="/logo.svg" alt="logo" style={{height: '0.9em', width: 'auto', display: 'inline-block', marginRight: '0.1em', transform: 'rotate(90deg)'}} />'s Website</h1>
       </header>
       </div>
       <article>
