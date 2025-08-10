@@ -5,7 +5,6 @@ export default function SymptomSleuth() {
         <header className="headline">
           <h1>Symptom Sleuth</h1>
           <h2>Map associations between symptoms, diagnoses and treatment plans</h2>
-          <a href="http://dev.symptomsleuth.com/" className="cta" target="_blank" rel="noopener noreferrer">Visit site</a>
         </header>
       </div>
       <article className="fewd">
