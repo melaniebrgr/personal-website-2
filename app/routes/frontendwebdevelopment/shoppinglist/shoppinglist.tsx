@@ -1,3 +1,5 @@
+import fig1 from "./fig1.png";
+
 export default function ShoppingList() {
   return (
     <>
@@ -48,7 +50,7 @@ export default function ShoppingList() {
         <h3>Addendum</h3>
         <p>Colour theme ideas taken from <a href="http://css-weekly.com/issue-227/" target="_blank" rel="noopener noreferrer">CSS Weekly newsletter</a>. Wireframes for smallish and bigish screens made in Sketch (Figure 1). "<a href="https://fonts.google.com/specimen/Open+Sans" target="_blank" rel="noopener noreferrer">Open Sans</a>" font from Google Fonts.</p>
         <figure>
-          <img src="app/routes/frontendwebdevelopment/shoppinglist/fig1.png" alt="" />
+          <img src={fig1} alt="" />
           <figcaption>Figure 2. Shopping list wireframes</figcaption>
         </figure>  
       </article>

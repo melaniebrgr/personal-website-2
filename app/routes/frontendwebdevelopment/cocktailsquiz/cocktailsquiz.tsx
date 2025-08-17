@@ -1,3 +1,5 @@
+import fig1 from "./fig1.png";
+
 export default function CocktailQuiz() {
   return (
     <>
@@ -110,7 +112,7 @@ APP.init = function () {
         <h3>Addendum</h3>  
         <p>Tone of the immediate feedback messages was inspired by SurveyMonkey's <a href="http://styleguide.mailchimp.com/voice-and-tone/" target="_blank" rel="noopener noreferrer">Voice and Tone style guide</a>. Layout wireframe was made in Sketch (Figure 1). Font is "Avenir Next".</p>
         <figure>
-          <img src="app/routes/frontendwebdevelopment/cocktailsquiz/fig1.png" alt="" />
+          <img src={fig1} alt="" />
           <figcaption>Figure 1. Cocktail quiz wireframes</figcaption>
         </figure>   
       </article>

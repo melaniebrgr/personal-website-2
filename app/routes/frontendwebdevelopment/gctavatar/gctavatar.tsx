@@ -1,3 +1,6 @@
+import fig1 from "./fig1.png";
+import fig2 from "./fig2.png";
+
 export default function GCTAvatar() {
   return (
     <>
@@ -58,7 +61,7 @@ export default function GCTAvatar() {
         </pre>
         <p><span className="challenge-number">3</span>How to turn genetic data into a visualization? One option is to pre-render all possible visual outcomes to sprite sheets and write logic to composite an image from the different sprites (face shape, eyes, glasses and so on). I decided on a more flexible approach of using a SVG image as a base and setting the SVG attributes with javascript. To accomplish this I use the GSAP library to apply and animate SVG fill and stroke properties.</p>
         <figure>
-          <img src="app/routes/frontendwebdevelopment/gctavatar/fig1.png" alt="" />
+          <img src={fig1} alt="" />
           <figcaption>Figure 1. Base female and male heads created and exported from Illustrator.</figcaption>
         </figure>  
         <p>I first created the base female and male SVG images in Illustrator (Figure 1), being careful to avoid effects such as drop shadows that cannot be exported as a SVG filter effects. I then followed the general pattern for SVG animation using GSAP from <a href="https://ihatetomatoes.net/" target="_blank" rel="noopener noreferrer">Petr Tichy's courses</a> and the <a href="http://greensock.com/" target="_blank" rel="noopener noreferrer">Greensock website</a>. Create modules made it easier to edit and organize the animation timelines. My approach was to</p>
@@ -100,7 +103,7 @@ export default function GCTAvatar() {
         <h3>Addendum</h3>
         <p>Here are the wireframes used to plan the app UI:</p>
         <figure>
-          <img src="app/routes/frontendwebdevelopment/gctavatar/fig2.png" alt="" />
+          <img src={fig2} alt="" />
           <figcaption>Figure 2. GCTAvatar wireframes</figcaption>
         </figure>    
         <p>The colour theme was eventually taken from <a href="http://madebyfieldwork.com/" target="_blank" rel="noopener noreferrer">madebyfieldwork</a>. Layout wireframe made in Sketch (Figure 2). "<a href="https://fonts.google.com/specimen/Cabin" target="_blank" rel="noopener noreferrer">Cabin</a>" and "<a href="https://fonts.google.com/specimen/Cabin+Sketch" target="_blank" rel="noopener noreferrer">Cabin Sketch</a>" fonts from Google Fonts.</p>               

@@ -1,3 +1,5 @@
+import fig1 from "./fig1.jpg";
+
 export default function SymptomSleuth() {
   return (
     <>
@@ -75,7 +77,7 @@ export default function SymptomSleuth() {
         <h3>Addendum</h3>
         <p>Functionality ideas for SS evolve quickly, Figure 1 shows the current UI sketch.</p>
         <figure>
-          <img src="app/routes/frontendwebdevelopment/symptomsleuth/fig1.jpg" alt="" />
+          <img src={fig1} alt="" />
           <figcaption>Figure 1. Wireframe sketch for Symptom Sleuth (previously MD Mindmap)</figcaption>
         </figure>  
       </article>

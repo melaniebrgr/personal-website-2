@@ -1,3 +1,10 @@
+import fig1 from "./fig1.jpg";
+import fig2 from "./fig2.jpg";
+import fig3 from "./fig3.jpg";
+import fig4 from "./fig4.jpg";
+import fig5 from "./fig5.jpg";
+import fig6 from "./fig6.png";
+
 export default function NatureCover() {
   return (
     <>
@@ -23,38 +30,38 @@ export default function NatureCover() {
         <p>Nature Chemistry covers from the past two years (25 issues, including January 2015), fall into two main categories: molecular visualizations (10/25, Figure 1 top), and artistic interpretations of molecular structure (9/25, Figure 1 bottom). Two lesser represented categories are microscopy photos (4/25) and visual metaphors (2/25).</p>
         <p>The uneven distribution is likely more of a reflection of the journal's subject matter, which tends to deal with the submicroscopic level, than an indication of general style preference by the journal's editors (photos are much more common on Nature covers for instance). However, it does suggest that the two main categories are safe bets. In addition, Nature Chemistry covers typically consist of a single, "hero image" devoid of callouts, labels or schematic drawings. As stated in <a href="http://blogs.nature.com/nautilus/2010/02/making_your_mark_on_the_journa.html" target="_blank" rel="noopener noreferrer">Making your mark on the journal cover</a>, "Throwing together composite images with lots of different objects styled in different ways on a somewhat arbitrary background just doesn't do it for us. … It really does come down to what we judge to be the most striking image."</p>
         <figure>
-          <img src="app/routes/designandvisualcommmunication/naturecover/fig1.jpg" alt="" />
+          <img src={fig1} alt="" />
           <figcaption>Figure 1. The two main Nature Chemistry cover categories: (top row) classic molecular visualization, and (bottom row) artistic interpretations of molecular structure.</figcaption>
         </figure> 
         <h3>Treatment 1: Classic molecular visualization</h3>
         <p>The DNA nanotubes are viewed from below in 1-point perspective, i.e. the viewer is on the ground, looking up (Figure 2). The illustration emphasizes the rigid structure of the nanotubes. The main focus is on the largest nanotube in the centre of the page, its ladder-like appearance serving as a visual metaphor for advancement. The metaphor could be emphasized by giving the molecular representation a wood "skin" similar to a wood ladder. A 'realistic' molecular surface or CPK representation of the DNA nanotube is envisioned.</p>
         <figure>
-          <img src="app/routes/designandvisualcommmunication/naturecover/fig2.jpg" alt="" />
+          <img src={fig2} alt="" />
           <figcaption>Figure 2. (left) Cover treatment 1, "molecular visualization" sketch, and (right) concept photo.</figcaption>
         </figure>
         <h3>Treatment 2: Artistic interpretations of molecular structures</h3>
         <p>DNA nanotubes are viewed from above in stereoscopic perspective (Figure 3 left). The nanotube structure is simplified into triangular prisms and small subunits fly in from above, adding to the growing structures. Some subunits glow (these are fluorescently labelled rigidifying structures). The illustration emphasizes the modular, controlled growth of custom nanotubes on a solid support. The ground plane could be made to glow to suggest the TIRF microscope setup. The 2D illustration will be created with Hexels, a grid-based digital painting program in order to achieve the popular, pixel art style (Figure 1 right).</p>
         <figure>
-          <img src="app/routes/designandvisualcommmunication/naturecover/fig3.jpg" alt="" />
+          <img src={fig3} alt="" />
           <figcaption>Figure 3. (left) Cover treatment 2, "artistic interpretation of molecular structure" sketch, and (right) sample visual styles.</figcaption>
         </figure>
         <h3>Revision 1</h3>
         <p><em>Client feedback:</em> Use the nanotube molecular structures in Treatment 1, not the simplified prisms in Treatment 2; however, Treatment 1 does not tell the solid-phase synthesis story well enough. Consider changing the perspective of Treatment 1 to a top-down view, similar to Treatment 2 and have rungs incoming. We also want to highlight the segmented nature of the DNA ladders, e.g. with alternating colour or some other technique. The fluorescent tags should be spaced regularly, and always on the same side of the nanotube.</p>
         <p><em>Solution:</em> I tried three different sketches (Figure 4) with top-down views of the nanotubes using simplified structures. To highlight the alternating rung types, either alternate the colour of the fluorescent dye, or omit the rung colour could be alternated instead. In all Figure 4 sketches the former is explored. The type of light emitted by the dye could either be a glow or a spotlight. The former may be preferable if scene is already visually "busy".</p>
         <figure>
-          <img src="app/routes/designandvisualcommmunication/naturecover/fig4.jpg" alt="" />
+          <img src={fig4} alt="" />
           <figcaption>Figure 4. Sketch 1 (left), a dramatic perspective with depth of field applied. Sketch 2 (middle) a grid of nanotubes with a top-down view. A tilt-shift is applied to produce a 'miniaturization' effect. Sketch 3 (right) dyes glow like spotlights.</figcaption>
         </figure> 
         <h3>Revision 2</h3>
         <p><em>Client feedback:</em> We want to convey both the rigidity and flexibility of the nanotubes, similar to that in fiber optic cable images, by making nanotubes longer (length of one side is 6.8nm, and a 20mer nanotube is ~480nm in length) and curving. Try red and green colours to differentiate the rungs. Omit individual rungs flying in. Show light shining up from the ground by the TIRF microscope.</p>
         <figure>
-          <img src="app/routes/designandvisualcommmunication/naturecover/fig5.jpg" alt="" />
+          <img src={fig5} alt="" />
           <figcaption>Figure 5. Sketch 1 (left) nanotubes in the back are simplified prism shapes, but a single nanotube comes toward you, fading to reveal its molecular structure (not pictured here). Nanotubes would be modelled to model real microscopic dimensions. Sketch 2 (right) a more dynamic nanotube arrangement.</figcaption>
         </figure>
         <h3>Revision 3</h3>
         <p><em>Client feedback:</em> Nanotubes should be dispersed across the image, but only the fluorophores within the light cube glow. The molecular structure of the single nanotube that comes out towards you should be clear. The material of the nanotubes further back should appear more organic. The glowing red and green regions should be interspersed by non-glowing regions.</p>
         <figure>
-          <img src="app/routes/designandvisualcommmunication/naturecover/fig6.png" alt="" />
+          <img src={fig6} alt="" />
           <figcaption>Figure 6. Final cover illustration</figcaption>
         </figure>  
         <h3>Conclusion</h3> 

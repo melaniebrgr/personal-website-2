@@ -1,3 +1,5 @@
+import fig1 from "./fig1.jpg";
+
 export default function Lab3D() {
   return (
     <>
@@ -29,7 +31,7 @@ export default function Lab3D() {
         <h3>Approach</h3>
         <p>I looked at creating an ebook with iBooks author, but ultimately preferred the web as a platform because of the number of tools I could leverage and because it enabled broader distribution. To display molecular graphics I used ChemDoodle Web Components (CWC), a javascript library for chemical graphics, interfaces and informatics. Following the conclusion of this project I wrote <a href="http://jcheminf.springeropen.com/articles/10.1186/s13321-015-0085-3" target="_blank" rel="noopener noreferrer">a review of CWC</a> which was published in the Journal of Cheminformatics (Figure 1).</p>
         <figure>
-          <img src="app/routes/frontendwebdevelopment/lab3d/fig1.jpg" alt="" />
+          <img src={fig1} alt="" />
           <figcaption>Figure 1. Graphical abstract for ChemDoodle Web Components <a href="http://jcheminf.springeropen.com/articles/10.1186/s13321-015-0085-3" target="_blank" rel="noopener noreferrer">review article</a>.</figcaption>
         </figure>  
         <h3>Challenges</h3> 
