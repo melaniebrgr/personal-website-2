@@ -1,5 +1,5 @@
 @import 'frontendwebdevelopment';
-@import 'writingandspeaking';
+@import 'publicationsandpresentations';
 
 article {
 	a {
@@ -22,6 +22,11 @@ article {
   h4 {
     font-size: $serif-sm;
     margin: $a-padding-vert*2 $a-padding-horz $a-padding-vert/2 $a-padding-horz;
+  }
+  h5 {
+    font-size: $serif-sm;
+    margin-block-start: $a-padding-vert/2;
+    margin-block-end: $a-padding-vert/2;
   }
   img {
     width: 100%;

@@ -51,7 +51,7 @@ export default function Layout() {
                   <li className="nav_link"><NavLink to="/naturecover">Nature cover</NavLink></li>
                 </ul>
               </li>              
-    					<li className="nav_link"><NavLink to="/writingandspeaking">Writing &amp; Speaking</NavLink></li>
+    					<li className="nav_link"><NavLink to="/publicationsandpresentations">Publications &amp; Presentations</NavLink></li>
     				</ul>
     			</nav>
     		</header>

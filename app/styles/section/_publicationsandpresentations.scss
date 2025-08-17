@@ -1,4 +1,4 @@
-.writingandspeaking {
+.publicationsandpresentations {
 	.section {
 		@include transition(background-color);
 		display: block;
@@ -11,8 +11,7 @@
 				padding-right: 0;
 			}
 			&:before {
-				content: '·';
-				// display: inline-block;
+				content: ' ∙';
 				padding-right: 4px;
 			}
 		}

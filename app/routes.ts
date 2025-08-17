@@ -13,6 +13,6 @@ export default [
         route("apliaredesign", "routes/designandvisualcommmunication/apliaredesign/apliaredesign.tsx"),
         route("naturecover", "routes/designandvisualcommmunication/naturecover/naturecover.tsx"),
         // Other
-        route("writingandspeaking", "routes/writingandspeaking/writingandspeaking.tsx"),
+        route("publicationsandpresentations", "routes/publicationsandpresentations/publicationsandpresentations.tsx"),
     ]),
 ] satisfies RouteConfig;
