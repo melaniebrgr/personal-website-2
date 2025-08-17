@@ -21,7 +21,7 @@ article {
 	}
   h4 {
     font-size: $serif-sm;
-    margin-bottom: $a-padding-vert/2;
+    margin: $a-padding-vert*2 $a-padding-horz $a-padding-vert/2 $a-padding-horz;
   }
   img {
     width: 100%;
