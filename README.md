@@ -2,7 +2,7 @@
 
 Migrated from [Personal Website v1](https://github.com/melaniebrgr/personal-website). Built with React, Vite, and React Router. Some tradeoffs made porting the v1 codebase for speed, e.g. jQuery is still a dependency to achieve the nav behaviour.
 
-## To do
+## To do: tech
 
 - [x] QA personal website v1 and v2
 - [ ] fix sass style deprecation warnings OR
@@ -10,8 +10,13 @@ Migrated from [Personal Website v1](https://github.com/melaniebrgr/personal-webs
 - [ ] remove jQuery
 - [ ] move all static assets to public folder
 - [ ] remove docker files
-- [ ] style writing and speaking sections
+- [x] fix publication and presentation styles
+
+## To do: content
+
 - [ ] transfer Medium and Substack articles and syndicate?
+- [ ] write up for [react-chemdoodle](https://www.npmjs.com/package/react-chemdoodle)
+- [ ] write up for [pass my boards](https://apps.apple.com/us/app/pass-my-boards-cfpc-samps/id1453289071)
 
 ## Getting Started
 
