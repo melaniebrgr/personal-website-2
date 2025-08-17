@@ -16,6 +16,7 @@ export default function ApliaRedesign() {
       <li>InDesign</li>
       <li>Maya</li>
     </ul>
+    <p className="date">Sep 1, 2015</p>
     <h3>Introduction</h3>
     <p>In one impressive example of the impact of design, removing a single field from the Expedia.com check-out form boosted sales by 12 million dollars. If a simple UI decision can do that for e-commerce, what can it do for learning? When designing interfaces for learning, we consider usability and the user experience, but we also need to keep in mind that the goals of the learner are significantly different from a consumer: a learner is seeking to transform herself. The field of Instructional Design (ID) is devoted to crafting educational experiences based on learning science research, and if you’re developing educational content, consulting with an instructional designer would be beneficial. If you don't have access to an ID specialist however, there are still simple things you can do to enhance the learning experience.</p>
     <figure>

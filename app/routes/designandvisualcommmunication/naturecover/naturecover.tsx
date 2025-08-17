@@ -22,6 +22,7 @@ export default function NatureCover() {
           <li>InDesign</li>
           <li>Maya</li>
         </ul>
+        <p className="date">April 1, 2015</p>
         <h3>Brief</h3>
         <p>Create an editorial cover illustration to accompany the journal article, "Stepwise growth of surface-grafted DNA nanotubes visualized at the single molecule level", by Dr. Gonzalo Cosa, chemistry professor at McGill University. The paper had been accepted to Nature Chemistry and the illustration would be entered in the competition for the cover of the April 2014 issue of Nature Chemistry.</p>
         <h3>Approach</h3>

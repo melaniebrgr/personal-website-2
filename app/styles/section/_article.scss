@@ -31,6 +31,9 @@ article {
 		margin: $a-padding-vert $a-padding-horz;
     line-height: 1.6rem;
 	}
+  p.date {
+    font-weight: $bold;
+  }
 	ol {
 		counter-reset: list;
 		margin: $a-padding-vert 63px;
