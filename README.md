@@ -5,11 +5,13 @@ Migrated from [Personal Website v1](https://github.com/melaniebrgr/personal-webs
 ## To do
 
 - [x] QA personal website v1 and v2
-- [ ] Fix sass style deprecation warnings OR
+- [ ] fix sass style deprecation warnings OR
 - [ ] convert to modern vanilla CSS, using variables
 - [ ] remove jQuery
 - [ ] move all static assets to public folder
 - [ ] remove docker files
+- [ ] style writing and speaking sections
+- [ ] transfer Medium and Substack articles and syndicate?
 
 ## Getting Started
 
@@ -51,8 +53,7 @@ Make sure to deploy the output of `npm run build`
 
 ```
 ├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
+├── package-lock.json
 ├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+│   └── client/    # Static assets
 ```
